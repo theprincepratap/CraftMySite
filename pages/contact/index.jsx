@@ -40,6 +40,16 @@ const Contact = () => {
             Let's <span className="text-accent">connect.</span>
           </motion.h2>
 
+          {/* contact details */}
+          <motion.div
+            variants={fadeIn("up", 0.3)}
+            initial="hidden"
+            animate="show"
+            className="mb-6 text-white/80"
+          >
+          
+          </motion.div>
+
           {/* form */}
           <motion.form
             variants={fadeIn("up", 0.4)}

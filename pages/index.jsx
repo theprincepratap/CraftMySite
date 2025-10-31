@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 import ParticlesContainer from "../components/ParticlesContainer";
 import ProjectsBtn from "../components/ProjectsBtn";
@@ -11,7 +12,17 @@ const Home = () => {
     <div className="bg-primary/60 h-full">
       {/* text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
-        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+        <div className="relative text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+          {/* decorative background avatar behind the hero text (medium+ screens) */}
+          <div className="hidden md:block absolute -right-16 -top-10 lg:-right-32 lg:-top-20 -z-10 opacity-20 pointer-events-none">
+            <Image
+              src="/avatar.png"
+              alt="decorative avatar"
+              width={420}
+              height={385}
+              className="object-contain w-[260px] md:w-[360px] lg:w-[420px] h-auto"
+            />
+          </div>
           {/* title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
@@ -20,8 +31,9 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Transforming Ideas <br /> Into{" "}
-            <span className="text-accent">Digital Reality</span>
+            Hi, I'm <span className="text-accent">Prince Kumar</span>
+            <br />
+            Full‑Stack Web Developer
           </motion.h1>
 
           {/* subtitle */}
@@ -32,10 +44,8 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
           >
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate,
-            exercitationem harum, quia nulla temporibus deleniti libero veniam
-            vero beatae numquam ducimus illum ab similique ipsam tempore fugit
-            quod laudantium debitis.
+            Passionate coder and creator, turning ideas into impactful digital
+            solutions.
           </motion.p>
 
           {/* btn */}
@@ -54,7 +64,7 @@ const Home = () => {
         </div>
       </div>
       {/* image */}
-      <div className="w-[1280px] h-full absolute right-0 bottom-0">
+  <div className="w-full h-full absolute right-0 bottom-0 overflow-visible pointer-events-none">
         {/* bg img */}
         <div
           role="img"
@@ -72,7 +82,7 @@ const Home = () => {
           animate="show"
           exit="hidden"
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 lg:right-[8%]"
+    className="w-full h-full max-w-[737px] max-h-[678px] absolute -bottom-32 lg:bottom-0 right-0 lg:right-[8%]"
         >
           <Avatar />
         </motion.div>

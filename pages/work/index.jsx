@@ -29,8 +29,7 @@ const Work = () => {
               exit="hidden"
               className="mb-4 max-w-[400px] mx-auto lg:mx-0"
             >
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-              tempora eligendi, quisquam tempore sint reiciendis.
+             Each project I build reflects my passion for creating innovative, efficient, and real-world solutions through technology. From designing full-stack web applications with Django, React, and Next.js to experimenting with AI-powered tools and real-time dashboards,
             </motion.p>
           </div>
 

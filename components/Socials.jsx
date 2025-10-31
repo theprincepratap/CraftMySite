@@ -2,42 +2,24 @@ import Link from "next/link";
 
 import {
   RiYoutubeLine,
-  RiInstagramLine,
-  RiFacebookLine,
-  RiDribbbleLine,
+  RiLinkedinLine,
   RiGithubLine,
-  RiPinterestLine,
 } from "react-icons/ri";
 
 export const socialData = [
   {
     name: "YouTube",
-    link: "https://youtube.com",
+    link: "https://youtube.com/@priprocode",
     Icon: RiYoutubeLine,
   },
   {
-    name: "Instagram",
-    link: "https://instagram.com",
-    Icon: RiInstagramLine,
-  },
-  {
-    name: "Facebook",
-    link: "https://facebook.com",
-    Icon: RiFacebookLine,
-  },
-  {
-    name: "Dribbble",
-    link: "https://dribbble.com",
-    Icon: RiDribbbleLine,
-  },
-  {
-    name: "Pinterest",
-    link: "https://pinterest.com",
-    Icon: RiPinterestLine,
+    name: "LinkedIn",
+    link: "https://linkedin.com/in/theprincepratap",
+    Icon: RiLinkedinLine,
   },
   {
     name: "Github",
-    link: "https://github.com/sanidhyy/modern-portfolio",
+    link: "https://github.com/theprincepratap",
     Icon: RiGithubLine,
   },
 ];

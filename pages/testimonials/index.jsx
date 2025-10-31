@@ -14,15 +14,27 @@ const Testimonials = () => {
           exit="hidden"
           className="h2 mb-8 xl:mb-0"
         >
-          What clients <span className="text-accent">say.</span>
+          Certificates &amp; <span className="text-accent">Achievements</span>
         </motion.h2>
 
-        {/* slider */}
+        <motion.p
+          variants={fadeIn("up", 0.3)}
+          initial="hidden"
+          animate="show"
+          className="mb-12 max-w-2xl mx-auto text-white/80"
+        >
+          A curated list of certificates and notable achievements that
+          demonstrate skills and continuous learning. Click each card to view
+          the certificate or more details.
+        </motion.p>
+
+        {/* certificates grid */}
         <motion.div
           variants={fadeIn("up", 0.4)}
           initial="hidden"
           animate="show"
           exit="hidden"
+          className="w-full"
         >
           <TestimonialSlider />
         </motion.div>

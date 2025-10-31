@@ -1,91 +1,71 @@
 import Image from "next/image";
-import { FaQuoteLeft } from "react-icons/fa";
-import { Navigation, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { FaCertificate } from "react-icons/fa";
 
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-const testimonialData = [
+const certificateData = [
   {
-    image: "/t-avt-1.png",
-    name: "Anne Smith",
-    position: "Customer",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+    image: "/cert-placeholder-1.png",
+    title: "Full-Stack Web Development",
+    issuer: "Coursera",
+    date: "Jun 2024",
+    link: "#",
+    description:
+      "Comprehensive program covering HTML, CSS, JavaScript, React and backend development with Django.",
   },
   {
-    image: "/t-avt-2.png",
-    name: "Jane Doe",
-    position: "Customer",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+    image: "/cert-placeholder-2.png",
+    title: "Django Web Developer",
+    issuer: "Udemy",
+    date: "Dec 2023",
+    link: "#",
+    description: "Built multiple Django apps and REST APIs; deployed to cloud providers.",
   },
   {
-    image: "/t-avt-3.png",
-    name: "Jhon Doe",
-    position: "Customer",
-    message:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum expedita odit beatae, cupiditate saepe quam officia aut placeat quas neque!",
+    image: "/cert-placeholder-3.png",
+    title: "Intro to Machine Learning",
+    issuer: "edX",
+    date: "Mar 2025",
+    link: "#",
+    description: "Foundational concepts in ML, model building, and evaluation.",
   },
 ];
 
 const TestimonialSlider = () => {
   return (
-    <Swiper
-      navigation
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Navigation, Pagination]}
-      className="h-[400px]"
-    >
-      {testimonialData.map((person, i) => (
-        <SwiperSlide key={i}>
-          <div className="flex flex-col items-center md:flex-row gap-x-8 h-full px-16">
-            {/* avatar, name, position */}
-            <div className="w-full max-w-[300px] flex flex-col xl:justify-center items-center relative mx-auto xl:mx-0">
-              <div className="flex flex-col justify-center text-center">
-                {/* avatar */}
-                <div className="mb-2 mx-auto">
-                  <Image
-                    src={person.image}
-                    width={100}
-                    height={100}
-                    alt={person.name}
-                  />
-                </div>
-
-                {/* name */}
-                <div className="text-lg">{person.name}</div>
-
-                {/* position */}
-                <div className="text-[12px] uppercase font-extralight tracking-widest">
-                  {person.position}
-                </div>
-              </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-0">
+      {certificateData.map((cert, i) => (
+        <article
+          key={i}
+          className="bg-gradient-to-br from-white/5 to-white/3 rounded-2xl p-6 hover:scale-[1.02] transition-transform duration-300 shadow-lg"
+        >
+          <div className="flex items-start gap-4">
+            <div className="w-20 h-20 flex-shrink-0 rounded-md overflow-hidden bg-white/5">
+              <Image src={cert.image} alt={cert.title} width={120} height={120} className="object-cover" />
             </div>
 
-            {/* quote & message */}
-            <div className="flex-1 flex flex-col justify-center before:w-[1px] xl:before:bg-white/20 xl:before:absolute xl:before:left-0 xl:before:h-[200px] relative xl:pl-20">
-              {/* quote icon */}
-              <div className="mb-4">
-                <FaQuoteLeft
-                  className="text-4xl xl:text-6xl text-white/20 mx-auto md:mx-0"
-                  aria-aria-hidden
-                />
+            <div className="flex-1">
+              <div className="flex items-center gap-2 mb-2">
+                <FaCertificate className="text-accent" />
+                <h3 className="text-lg font-semibold">{cert.title}</h3>
               </div>
+              <div className="text-sm text-white/70 mb-2">{cert.issuer} • {cert.date}</div>
+              <p className="text-sm text-white/80 mb-4">{cert.description}</p>
 
-              {/* message */}
-              <div className="xl:text-lg text-center md:text-left">
-                {person.message}
+              <div className="flex items-center gap-3">
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="btn px-4 py-2 rounded-full bg-accent/20 hover:bg-accent transition-colors"
+                >
+                  View Certificate
+                </a>
+                <span className="text-xs text-white/60">Verified</span>
               </div>
             </div>
           </div>
-        </SwiperSlide>
+        </article>
       ))}
-    </Swiper>
+    </div>
   );
 };
 

@@ -8,12 +8,15 @@ import {
   FaJs,
   FaReact,
   FaWordpress,
+  FaPython,
 } from "react-icons/fa";
 import {
   SiAdobephotoshop,
   SiAdobexd,
   SiFramer,
   SiNextdotjs,
+  SiDjango,
+  SiPostgresql,
 } from "react-icons/si";
 
 import Avatar from "../../components/Avatar";
@@ -26,19 +29,20 @@ export const aboutData = [
     title: "skills",
     info: [
       {
-        title: "Web Development",
+        title: "Technical Skills",
         icons: [
+          FaPython,
+          SiDjango,
           FaHtml5,
           FaCss3,
           FaJs,
           FaReact,
+          SiPostgresql,
           SiNextdotjs,
-          SiFramer,
-          FaWordpress,
         ],
       },
       {
-        title: "UI/UX Design",
+        title: "Creative Skills",
         icons: [FaFigma, SiAdobexd, SiAdobephotoshop],
       },
     ],
@@ -47,12 +51,12 @@ export const aboutData = [
     title: "awards",
     info: [
       {
-        title: "Webby Awards - Honoree",
-        stage: "2011 - 2012",
+        title: "Academic Excellence Award - BCA",
+        stage: "2024",
       },
       {
-        title: "Adobe Design Achievement Awards - Finalist",
-        stage: "2009 - 2010",
+        title: "Best Project Award - Django E-Commerce",
+        stage: "2023",
       },
     ],
   },
@@ -60,16 +64,12 @@ export const aboutData = [
     title: "experience",
     info: [
       {
-        title: "UX/UI Designer - XYZ Company",
-        stage: "2012 - 2023",
+        title: "Freelance Web Developer",
+        stage: "2024 - Present",
       },
       {
-        title: "Web Developer - ABC Agency",
-        stage: "2010 - 2012",
-      },
-      {
-        title: "Intern - DEF Corporation",
-        stage: "2008 - 2010",
+        title: "Personal Projects - Full-Stack Apps",
+        stage: "2022 - 2024",
       },
     ],
   },
@@ -77,16 +77,12 @@ export const aboutData = [
     title: "credentials",
     info: [
       {
-        title: "Web Development - ABC University, LA, CA",
-        stage: "2011",
+        title: "Bachelor of Computer Applications (BCA) - SNS Jehanabad",
+        stage: "2021 - 2024",
       },
       {
-        title: "Computer Science Diploma - AV Technical Institute",
-        stage: "2009",
-      },
-      {
-        title: "Certified Graphic Designer - ABC Institute, Los Angeles, CA",
-        stage: "2006",
+        title: "Master of Computer Applications (MCA) - VIT Chennai",
+        stage: "2025 - 2027",
       },
     ],
   },
@@ -99,16 +95,7 @@ const About = () => {
     <div className="h-full bg-primary/30 py-32 text-center xl:text-left">
       <Circles />
 
-      {/* avatar img */}
-      <motion.div
-        variants={fadeIn("right", 0.2)}
-        initial="hidden"
-        animate="show"
-        exit="hidden"
-        className="hidden xl:flex absolute bottom-0 -left-[370px]"
-      >
-        <Avatar />
-      </motion.div>
+      {/* avatar removed from About page - kept on Home only */}
 
       <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6">
         {/* text */}
@@ -120,8 +107,8 @@ const About = () => {
             exit="hidden"
             className="h2"
           >
-            Captivating <span className="text-accent">stories</span> birth
-            magnificent designs.
+           <span className="text-accent">Hii</span>
+           
           </motion.h2>
           <motion.p
             variants={fadeIn("right", 0.4)}
@@ -129,9 +116,8 @@ const About = () => {
             animate="show"
             className="max-w-[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:px-0"
           >
-            10 years ago, I begin freelancing as a developer. Since then, I've
-            done remote work for agencies, consulted for startups, and
-            collabrated on digital products for business and consumer use.
+            I'm Prince Kumar, a passionate coder and creative thinker dedicated to turning ideas into impactful digital solutions. With a strong foundation in Python, Django, React, and modern web technologies, I love building clean, efficient, and user-friendly applications.
+Beyond coding, I’m also a YouTube content creator, sharing knowledge, creativity, and stories that inspire others to learn and grow. My goal is to combine technical expertise with creativity to develop products that make a real difference.
           </motion.p>
 
           {/* counters */}
@@ -145,7 +131,7 @@ const About = () => {
               {/* experience */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={10} duration={5} />
+                  <CountUp start={0} end={2} duration={5} />+
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Years of experience.
@@ -155,17 +141,17 @@ const About = () => {
               {/* clients */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={250} duration={5} />
+                  <CountUp start={0} end={5} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Satisfied clients.
+                  Working Projects
                 </div>
               </div>
 
               {/* projects */}
               <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={650} duration={5} />
+                  <CountUp start={0} end={50} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
                   Finished projects.
@@ -175,10 +161,10 @@ const About = () => {
               {/* awards */}
               <div className="relative flex-1">
                 <div className="text-2xl xl:text-4xl font-extrabold text-accent mb-2">
-                  <CountUp start={0} end={8} duration={5} />
+                  <CountUp start={0} end={2} duration={5} />
                 </div>
                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                  Winning awards.
+                  Awards & Certificates
                 </div>
               </div>
             </div>
